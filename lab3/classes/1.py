@@ -6,6 +6,7 @@ class Myclass:
         self.str1 = input()
 
     def printString(self):
+        self.str1 = self.str1.upper()
         print(self.str1)
 
 
