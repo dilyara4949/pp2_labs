@@ -5,14 +5,17 @@ import re
 s = input()
 s += ' '
 
-need = re.search(r'[A-Z][a-z]+', s)
+need = re.search(r'[A-Z][a-z]*[A-Z]', s)
 
 while need:
-    repl = re.sub('', ' ', need.group())    # inserting spaces between word
-    repl = repl.strip()
-    s = re.sub(need.group(), repl, s)       # replacing 
+    newstr = need.group()
+    last = newstr[len(newstr)-1] 
+    newstr = newstr[:len(newstr)-1] + ' ' + last
 
-    need = re.search(r'[A-Z][a-z]+', s)     # update new word with cap letter
+    
+    s = re.sub(need.group(), newstr, s)       # replacing 
+
+    need = re.search(r'[A-Z][a-z]*[A-Z]', s)     # update new word with cap letter
 
 
 print(s)
