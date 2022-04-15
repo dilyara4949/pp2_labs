@@ -72,7 +72,7 @@ while run:
                 if start:
                     pygame.draw.line(screen, color, (start[0], start[1]), (start[0] + x, start[1]), 4)
                     pygame.draw.line(screen, color, (start[0], start[1]), (start[0] + x/2, start[1]-sqrt(3)*x/2), 4)
-                    pygame.draw.line(screen, color, (start[0]+50, start[1]), (start[0] + x/2, start[1]-sqrt(3)*x/2), 4)
+                    pygame.draw.line(screen, color, (start[0]+x, start[1]), (start[0] + x/2, start[1]-sqrt(3)*x/2), 4)
                     start = None
             if event.key == pygame.K_4:                 # draw right triangle
                 start = pygame.mouse.get_pos()
